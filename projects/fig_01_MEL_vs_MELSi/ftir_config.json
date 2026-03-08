@@ -1,0 +1,45 @@
+﻿{
+  "data_dir": "../../raw_data",
+  "output_dir": "output",
+  "run_single_mode": true,
+  "run_multi_mode": true,
+  "single": {
+    "file": "mel-si.txt",
+    "target_peaks": [3431, 2921, 1346, 754],
+    "search_half_width": 40.0,
+    "smooth_window_length": 25,
+    "smooth_polyorder": 3,
+    "baseline_window_length": 301,
+    "baseline_quantile": 0.10,
+    "baseline_smooth_window": 151,
+    "baseline_polyorder": 2,
+    "figsize": [7.4, 5.6],
+    "output_name": "fig01_single_MELSi"
+  },
+  "multi": {
+    "files": ["mel.txt", "mel-si.txt"],
+    "sample_names": ["MEL", "MEL-Si"],
+    "vertical_offsets": [18.0, 0.0],
+    "curve_colors": null,
+    "target_peak_lists": [
+      {
+        "blue": [3417, 3225, 1620, 1082, 694],
+        "red": [2959, 1439, 955, 467]
+      },
+      {
+        "blue": [3431, 754],
+        "red": [2921, 1346]
+      }
+    ],
+    "search_half_width": 40.0,
+    "smooth_window_length": 25,
+    "smooth_polyorder": 3,
+    "baseline_window_length": 301,
+    "baseline_quantile": 0.10,
+    "baseline_smooth_window": 151,
+    "baseline_polyorder": 2,
+    "peak_line_height": 3.2,
+    "figsize": [10.5, 6.8],
+    "output_name": "fig01_MEL_vs_MELSi"
+  }
+}
