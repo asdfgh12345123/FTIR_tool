@@ -101,3 +101,5 @@ Optional (recommended for matplotlib reliability):
 ```bash
 pyinstaller --onefile --windowed --collect-all matplotlib ftir_gui.py
 ```
+# FTIR_tool
+FTIR spectrum plotting and analysis tool
