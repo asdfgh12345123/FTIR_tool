@@ -113,12 +113,23 @@ pyinstaller --onefile --windowed --collect-all matplotlib ftir_gui.py
 推荐使用 tag 触发正式 Release：
 
 ```bash
-git tag v1.0.0
-git push origin v1.0.0
+git tag v1.0.1
+git push origin v1.0.1
 ```
 
 推送 tag 后，GitHub Actions 会自动：
 
-- 构建 Windows 可执行文件 `FTIR_Tool.exe`
-- 打包 `FTIR_Tool_Windows.zip`
+- 构建 Windows 可执行文件 `FTIR 光谱绘图工具.exe`
+- 打包 `FTIR_Tool_Windows_请下载这个压缩包.zip`
 - 自动创建 GitHub Release 并上传附件
+
+Windows 用户请优先下载 Release 里的：
+
+- `FTIR_Tool_Windows_请下载这个压缩包.zip`
+
+不要下载 GitHub 自动生成的：
+
+- `Source code (zip)`
+- `Source code (tar.gz)`
+
+这两个是源码，不是可直接运行的程序。
