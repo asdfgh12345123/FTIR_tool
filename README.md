@@ -113,9 +113,12 @@ pyinstaller --onefile --windowed --collect-all matplotlib ftir_gui.py
 推荐使用 tag 触发正式 Release：
 
 ```bash
-git tag v1.0.5
-git push origin v1.0.5
+git tag vX.Y.Z
+git push origin vX.Y.Z
 ```
+
+其中 `vX.Y.Z` 表示你本次要发布的语义化版本号，例如 `v1.0.4`、`v1.0.5`、`v1.1.0`。
+当前最新正式版本请直接查看 [Releases](https://github.com/asdfgh12345123/FTIR_tool/releases)。
 
 推送 tag 后，GitHub Actions 会自动：
 

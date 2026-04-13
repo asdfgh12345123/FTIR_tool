@@ -5,9 +5,13 @@
 Use the next semantic version tag when publishing:
 
 ```bash
-git tag v1.0.5
-git push origin v1.0.5
+git tag vX.Y.Z
+git push origin vX.Y.Z
 ```
+
+Replace `vX.Y.Z` with the version you want to publish, such as `v1.0.4`, `v1.0.5`, or `v1.1.0`.
+Check the latest published version here:
+[Releases](https://github.com/asdfgh12345123/FTIR_tool/releases)
 
 After the tag is pushed:
 
@@ -35,6 +39,6 @@ Recommended notes:
 
 - `v1.0.0`: first public usable release
 - `v1.0.1`: bug fix only
-- `v1.0.5`: later patch release example
+- `v1.0.5`: another patch release example
 - `v1.1.0`: new features without breaking old behavior
 - `v2.0.0`: breaking changes
