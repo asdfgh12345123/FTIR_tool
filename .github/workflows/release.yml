@@ -27,7 +27,7 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller --onefile --windowed --collect-all matplotlib ftir_gui.py --name FTIR_Tool
+          pyinstaller --onefile --windowed --collect-all matplotlib --icon assets/ftir_tool_icon.ico ftir_gui.py --name FTIR_Tool
 
       - name: Package release files
         shell: powershell
@@ -56,6 +56,7 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
+          name: FTIR Tool ${{ github.ref_name }}
           body: |
             ## Windows 用户下载说明
 

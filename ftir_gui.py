@@ -26,6 +26,7 @@ class FTIRGuiApp:
         self.root.minsize(1020, 760)
 
         self.base_dir = Path(__file__).resolve().parent
+        self.icon_path = self.base_dir / "assets" / "ftir_tool_icon.ico"
         self.output_dir = self.base_dir / "output"
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -37,6 +38,7 @@ class FTIRGuiApp:
         self.single_file: Optional[Path] = None
         self.multi_files: List[Path] = []
 
+        self._apply_window_icon()
         self._configure_style()
         self._build_ui()
         self.restore_defaults(log_message=False)
@@ -44,6 +46,14 @@ class FTIRGuiApp:
 
         self.log(f"输出目录：{self.output_dir}")
         self.log("程序已启动。")
+
+    def _apply_window_icon(self) -> None:
+        if not self.icon_path.exists():
+            return
+        try:
+            self.root.iconbitmap(str(self.icon_path))
+        except tk.TclError:
+            pass
 
     def _configure_style(self) -> None:
         style = ttk.Style()
