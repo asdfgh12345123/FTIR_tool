@@ -232,3 +232,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+.ftir_gui_state.json
+FTIR光谱绘图工具/build/
+FTIR光谱绘图工具/dist/
+FTIR光谱绘图工具/*.spec

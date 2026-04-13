@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build EXE
+        run: |
+          pyinstaller --onefile --windowed --collect-all matplotlib ftir_gui.py --name FTIR_Tool
+
+      - name: Package release files
+        shell: powershell
+        run: |
+          New-Item -ItemType Directory -Force release | Out-Null
+          Copy-Item dist\FTIR_Tool.exe release\FTIR_Tool.exe
+          Copy-Item README.md release\README.md
+          if (Test-Path LICENSE) { Copy-Item LICENSE release\LICENSE }
+          Compress-Archive -Path release\* -DestinationPath FTIR_Tool_Windows.zip -Force
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/FTIR_Tool.exe
+            FTIR_Tool_Windows.zip
+          generate_release_notes: true
