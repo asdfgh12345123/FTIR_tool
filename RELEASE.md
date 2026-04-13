@@ -1,12 +1,12 @@
 # Release Guide
 
-## First release recommendation
+## Release tag example
 
-Suggested first tag:
+Use the next semantic version tag when publishing:
 
 ```bash
-git tag v1.0.1
-git push origin v1.0.1
+git tag v1.0.5
+git push origin v1.0.5
 ```
 
 After the tag is pushed:
@@ -35,5 +35,6 @@ Recommended notes:
 
 - `v1.0.0`: first public usable release
 - `v1.0.1`: bug fix only
+- `v1.0.5`: later patch release example
 - `v1.1.0`: new features without breaking old behavior
 - `v2.0.0`: breaking changes

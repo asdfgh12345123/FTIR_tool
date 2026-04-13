@@ -113,8 +113,8 @@ pyinstaller --onefile --windowed --collect-all matplotlib ftir_gui.py
 推荐使用 tag 触发正式 Release：
 
 ```bash
-git tag v1.0.1
-git push origin v1.0.1
+git tag v1.0.5
+git push origin v1.0.5
 ```
 
 推送 tag 后，GitHub Actions 会自动：
