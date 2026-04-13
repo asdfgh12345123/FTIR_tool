@@ -13,13 +13,13 @@ After the tag is pushed:
 
 - GitHub Actions will run the `Release` workflow
 - A Windows EXE will be built automatically
-- `FTIR Tool.exe` and `FTIR_Tool_Windows_Portable.zip` will be attached to the GitHub Release
+- `FTIR_Tool.exe` and `FTIR_Tool_Windows_Portable.zip` will be attached to the GitHub Release
 
 Recommended user-facing guidance:
 
 - Ask Windows users to download `FTIR_Tool_Windows_Portable.zip`
 - Tell users not to download `Source code (zip)` unless they want the source code
-- After extracting the zip, users should double-click `启动 FTIR Tool.bat`
+- After extracting the zip, users should double-click `Run_FTIR_Tool.bat`
 
 ## What should go into a release
 
