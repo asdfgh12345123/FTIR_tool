@@ -33,25 +33,25 @@ jobs:
         shell: powershell
         run: |
           New-Item -ItemType Directory -Force release | Out-Null
-          Copy-Item dist\FTIR_Tool.exe "release\FTIR 光谱绘图工具.exe"
+          Copy-Item dist\FTIR_Tool.exe "release\FTIR Tool.exe"
           Copy-Item README.md release\README.md
           if (Test-Path LICENSE) { Copy-Item LICENSE release\LICENSE }
           @'
-          请优先下载并解压这个压缩包使用，不要下载 GitHub 自动生成的 Source code (zip/tar.gz)。
+          请优先下载并解压 FTIR_Tool_Windows_Portable.zip 使用，不要下载 GitHub 自动生成的 Source code (zip/tar.gz)。
 
           使用方法：
           1. 解压当前压缩包
-          2. 双击“打开 FTIR 光谱绘图工具.bat”
+          2. 双击“启动 FTIR Tool.bat”
           3. 如果 Windows 弹出安全提示，请选择“更多信息” -> “仍要运行”
 
-          如果你熟悉 Windows 程序，也可以直接双击“FTIR 光谱绘图工具.exe”。
-          '@ | Set-Content -Encoding utf8 "release\先看这里.txt"
+          如果你熟悉 Windows 程序，也可以直接双击“FTIR Tool.exe”。
+          '@ | Set-Content -Encoding utf8 "release\使用说明.txt"
           @'
           @echo off
           cd /d "%~dp0"
-          start "" "FTIR 光谱绘图工具.exe"
-          '@ | Set-Content -Encoding ascii "release\打开 FTIR 光谱绘图工具.bat"
-          Compress-Archive -Path release\* -DestinationPath "FTIR_Tool_Windows_请下载这个压缩包.zip" -Force
+          start "" "FTIR Tool.exe"
+          '@ | Set-Content -Encoding ascii "release\启动 FTIR Tool.bat"
+          Compress-Archive -Path release\* -DestinationPath "FTIR_Tool_Windows_Portable.zip" -Force
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -61,7 +61,7 @@ jobs:
 
             请下载：
 
-            - `FTIR_Tool_Windows_请下载这个压缩包.zip`
+            - `FTIR_Tool_Windows_Portable.zip`
 
             请不要下载下面 GitHub 自动生成的：
 
@@ -72,11 +72,11 @@ jobs:
 
             使用方法：
 
-            1. 下载 `FTIR_Tool_Windows_请下载这个压缩包.zip`
+            1. 下载 `FTIR_Tool_Windows_Portable.zip`
             2. 解压压缩包
-            3. 双击 `打开 FTIR 光谱绘图工具.bat`
+            3. 双击 `启动 FTIR Tool.bat`
 
-            如果你熟悉 Windows 程序，也可以直接双击 `FTIR 光谱绘图工具.exe`。
+            如果你熟悉 Windows 程序，也可以直接双击 `FTIR Tool.exe`。
           files: |
-            release/FTIR 光谱绘图工具.exe
-            FTIR_Tool_Windows_请下载这个压缩包.zip
+            release/FTIR Tool.exe
+            FTIR_Tool_Windows_Portable.zip

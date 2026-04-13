@@ -119,13 +119,13 @@ git push origin v1.0.1
 
 推送 tag 后，GitHub Actions 会自动：
 
-- 构建 Windows 可执行文件 `FTIR 光谱绘图工具.exe`
-- 打包 `FTIR_Tool_Windows_请下载这个压缩包.zip`
+- 构建 Windows 可执行文件 `FTIR Tool.exe`
+- 打包 `FTIR_Tool_Windows_Portable.zip`
 - 自动创建 GitHub Release 并上传附件
 
 Windows 用户请优先下载 Release 里的：
 
-- `FTIR_Tool_Windows_请下载这个压缩包.zip`
+- `FTIR_Tool_Windows_Portable.zip`
 
 不要下载 GitHub 自动生成的：
 
